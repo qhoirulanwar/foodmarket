@@ -1,0 +1,8 @@
+{
+  "name": "foodmarket",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "45cdc3d2"
+}
