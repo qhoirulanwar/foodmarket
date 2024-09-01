@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   constructor() {}
+
+  ngOnInit() {
+    document.documentElement.classList.toggle('ion-palette-dark', false);
+  }
 }

@@ -1,0 +1,61 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Keranjang</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Keranjang</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <ion-card>
+    <ion-item lines="none">
+      <ion-thumbnail slot="start">
+        <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+      </ion-thumbnail>
+      <div>
+        <ion-text>
+          <div class="ion-text-nowrap" style="padding-bottom: 4px;">The Macdonalds</div>
+        </ion-text>
+        <ion-text color="primary">
+          <div class="price">Rp 123.000</div>
+        </ion-text>
+        <ion-text class="discount-price" color="medium">Rp123.000</ion-text>
+      </div>
+
+      <div slot="end" style="display: contents;">
+        <ion-button shape="round">
+          <ion-icon slot="icon-only" name="remove-outline"></ion-icon>
+        </ion-button>
+        <ion-input value="1"></ion-input>
+        <ion-button shape="round">
+          <ion-icon slot="icon-only" name="add-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-item>
+
+  </ion-card>
+
+
+</ion-content>
+
+<ion-footer class="ion-no-border" style="max-width: 960px; align-self: center;">
+  <ion-toolbar style="padding: 0px 18px;">
+    <div>
+      <ion-text>
+        <div>Total</div>
+      </ion-text>
+      <ion-text color="primary" class="price">
+        Rp123.000
+      </ion-text>
+    </div>
+
+    <div slot="end">
+      <ion-button>Checkout (2)</ion-button>
+    </div>
+  </ion-toolbar>
+</ion-footer>
