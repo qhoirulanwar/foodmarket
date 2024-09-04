@@ -8,12 +8,12 @@ import { AuthService } from '../auth/auth.service';
 export class AuthGuardService implements CanActivate {
 
   constructor(
-    private auth: AuthService, private router: Router
+    private auth: AuthService,
+    private router: Router
   ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): MaybeAsync<GuardResult> {
-    // throw new Error('Method not implemented.');
-    if (!this.auth.isLoggedIn) {
+    if (!this.auth.getToken()) {
       this.router.navigate(['/login']);
       return false;
     }
