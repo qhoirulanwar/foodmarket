@@ -7,6 +7,9 @@ import { IonicModule } from '@ionic/angular';
 import { OrdersPageRoutingModule } from './orders-routing.module';
 
 import { OrdersPage } from './orders.page';
+import { OrderCardComponent } from './components/order-card/order-card.component';
+import { OrderService } from '../../services/order/order.service';
+import { OrderDetailPage } from './order-detail/order-detail.page';
 
 @NgModule({
   imports: [
@@ -15,6 +18,7 @@ import { OrdersPage } from './orders.page';
     IonicModule,
     OrdersPageRoutingModule
   ],
-  declarations: [OrdersPage]
+  declarations: [OrdersPage, OrderCardComponent, OrderDetailPage],
+  providers: [OrderService]
 })
-export class OrdersPageModule {}
+export class OrdersPageModule { }

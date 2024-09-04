@@ -1,0 +1,18 @@
+<ion-card style="width: 200px;">
+  <img style="height: 120px; width: 168px; object-fit: cover;"
+    [src]="product.imgUrl || 'https://ionicframework.com/docs/img/demos/card-media.png'" [alt]="product.name" />
+
+  <ion-card-content style="padding: 6px 0 0;">
+    <ion-text color="dark">
+      <div class="ion-text-nowrap">{{ product.name }}</div>
+      <div class="text-nowrap-two-line font-12">
+        {{ product.description }}
+      </div>
+    </ion-text>
+
+    <ion-text color="primary" class="price">
+      Rp {{ product.price | number:'1.0-0' }}
+    </ion-text>
+    <ion-text class="discount-price" color="medium">Rp {{ discountedPrice | number:'1.0-0' }}</ion-text>
+  </ion-card-content>
+</ion-card>

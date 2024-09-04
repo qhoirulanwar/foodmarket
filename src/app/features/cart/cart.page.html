@@ -11,11 +11,17 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-cart-cards *ngFor="let item of cartData?.items" [item]="item" (cartUpdated)="onCartUpdated()"></app-cart-cards>
+  <div *ngIf="isCartEmpty" class="no-data-info">
+    <h2>Keranjang Anda kosong</h2>
+    <p>Ayo mulai belanja!</p>
+  </div>
+
+  <app-cart-cards *ngFor="let item of cartData?.items" [item]="item" (cartUpdated)="onCartUpdated()"
+    [@fadeInOut]></app-cart-cards>
 
 </ion-content>
 
-<ion-footer class="ion-no-border" style="max-width: 960px; align-self: center;">
+<ion-footer class="ion-no-border" style="max-width: 960px; align-self: center;" *ngIf="!isCartEmpty">
   <ion-toolbar style="padding: 0px 18px;">
     <div>
       <ion-text>
@@ -27,7 +33,7 @@
     </div>
 
     <div slot="end">
-      <ion-button>Checkout ({{ cartData?.totalQuantity || 0 }})</ion-button>
+      <ion-button (click)="openCheckoutModal()">Checkout ({{ cartData?.totalQuantity || 0 }})</ion-button>
     </div>
   </ion-toolbar>
 </ion-footer>

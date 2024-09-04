@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Checkout</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Tutup</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Alamat Pengiriman</ion-label>
+      <ion-textarea formControlName="shippingAddress" rows="3"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label>Layanan Kurir</ion-label>
+      <ion-select slot="end" formControlName="shippingName">
+        <ion-select-option *ngFor="let option of shippingOptions" [value]="option.name">
+          {{ option.name }} - Rp{{ option.price | number:'1.0-0' }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Total Belanja:</ion-label>
+      <ion-note slot="end" color="primary">Rp{{ totalAmount | number:'1.0-0' }}</ion-note>
+    </ion-item>
+    <br>
+    <ion-button expand="block" type="submit" [disabled]="!checkoutForm.valid">Buat Pesanan</ion-button>
+  </form>
+</ion-content>

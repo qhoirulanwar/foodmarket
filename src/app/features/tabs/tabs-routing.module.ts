@@ -20,10 +20,6 @@ const routes: Routes = [
         loadChildren: () => import('../cart/cart.module').then(m => m.CartPageModule)
       },
       {
-        path: 'account',
-        loadChildren: () => import('../account/account.module').then(m => m.AccountPageModule)
-      },
-      {
         path: '',
         redirectTo: '/app/home',
         pathMatch: 'full'

@@ -14,7 +14,7 @@
     </div>
 
     <div slot="end" style="display: contents;">
-      <ion-button id="reduce" shape="round" (click)="reduceQuantity(item.productId)">
+      <ion-button id="reduce" shape="round" (click)="reduceQuantity(item.productId, item.quantity)">
         <ion-icon slot="icon-only" name="remove-outline"></ion-icon>
       </ion-button>
       <ion-input [value]="item.quantity" disabled></ion-input>

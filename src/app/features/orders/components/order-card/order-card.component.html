@@ -1,0 +1,25 @@
+<ion-card (click)="onCardClick()">
+  <ion-item lines="none">
+    <ion-thumbnail slot="start">
+      <img alt="Order icon" src="{{ getItemImg() }}" />
+    </ion-thumbnail>
+    <div>
+      <ion-text>
+        <sub>{{ formatDate(order.createdAt) }}</sub>
+      </ion-text>
+      <ion-text>
+        <div class="ion-text-nowrap">Order #{{ order.id }}</div>
+      </ion-text>
+      <ion-text color="medium">{{ getItemCount() }} barang</ion-text>
+    </div>
+
+    <div slot="end" style="display: contents;">
+      <ion-badge color="primary">{{ order.status }}</ion-badge>
+    </div>
+  </ion-item>
+
+  <ion-card-content style="display: flex; justify-content: space-between;">
+    <ion-text>Total Belanja</ion-text>
+    <ion-text class="price-total">Rp{{ order.totalAmount | number:'1.0-0' }}</ion-text>
+  </ion-card-content>
+</ion-card>

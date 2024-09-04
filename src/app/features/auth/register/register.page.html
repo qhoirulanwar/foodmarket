@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Registrasi</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form (ngSubmit)="register()" [formGroup]="registerForm">
+
+    <div class="item-input">
+      <ion-label>Nama</ion-label>
+      <ion-input type="text" formControlName="name" required></ion-input>
+    </div>
+
+    <div class="item-input">
+      <ion-label>Email</ion-label>
+      <ion-input type="email" formControlName="email" required></ion-input>
+    </div>
+
+    <div class="item-input">
+      <ion-label>Password</ion-label>
+      <ion-input type="password" formControlName="password" required></ion-input>
+    </div>
+    <div class="item-input">
+      <ion-button expand="block" type="submit" [disabled]="!registerForm.valid">Daftar</ion-button>
+    </div>
+  </form>
+</ion-content>

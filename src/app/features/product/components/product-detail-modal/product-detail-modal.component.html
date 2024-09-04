@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ product.name }}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="dismiss()">Tutup</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <img [src]="product.imgUrl || 'https://ionicframework.com/docs/img/demos/card-media.png'" [alt]="product.name"
+    style="width: 100%; height: 200px; object-fit: cover;">
+
+  <h2>{{ product.name }}</h2>
+  <p>{{ product.description }}</p>
+
+  <ion-text color="primary" class="price">
+    <h3>Rp {{ product.price | number:'1.0-0' }}</h3>
+  </ion-text>
+  <ion-text class="discount-price" color="medium">
+    <p>Harga Asli: Rp {{ discountedPrice | number:'1.0-0' }}</p>
+  </ion-text>
+
+  <ion-button expand="block" color="primary" (click)="addToCart()">Tambah ke Keranjang</ion-button>
+</ion-content>

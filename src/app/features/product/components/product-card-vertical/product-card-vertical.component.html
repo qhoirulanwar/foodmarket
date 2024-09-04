@@ -1,0 +1,19 @@
+<ion-card style="padding-left: 0;" (click)="onProductClick()">
+  <ion-item lines="none">
+    <ion-thumbnail slot="start">
+      <img [src]="product.imgUrl || 'https://ionicframework.com/docs/img/demos/card-media.png'" [alt]="product.name" />
+    </ion-thumbnail>
+    <div>
+      <ion-text>
+        <div class="ion-text-nowrap" style="padding-bottom: 4px;">{{ product.name }}</div>
+      </ion-text>
+      <ion-text class="text-nowrap-one-line">
+        <div class="font-12">{{ product.description }}</div>
+      </ion-text>
+      <ion-text color="primary" class="price">
+        Rp {{ product.price | number:'1.0-0' }}
+      </ion-text>
+      <ion-text class="discount-price" color="medium">Rp {{ discountedPrice | number:'1.0-0' }}</ion-text>
+    </div>
+  </ion-item>
+</ion-card>
